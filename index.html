@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador Challenge</title>
-    <link rel="stylesheet" href="stayles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -12,19 +15,32 @@
         <img class="logo" src="Imagenes/Logo@2x.png" alt="Logo Alura">
     </header>
     <main>
-        <section class="section">
+        <section class="section1">
             <div class="contenedor-cajatexto">
                 <textarea class="cajatexto" placeholder="Ingresa tu texto aquí"></textarea>
             </div>
             <div class="alerta">
                 <img src="Imagenes/bi_exclamation-circle-fill-1.png" alt="">
-                <p>Solo letras minusculas y sin asentos</p>
+                <p>Solo letras minúsculas y sin acentos</p>
             </div>
-            <div class="conteneror    -botones">
-                <button id="btnCifrar" onclick="cifrar()">Cifrar</button>
-                <button id="btnDescifrar" disabled>Descifrar</button>
+            <div class="contenedor-botones">
+                <input class="btn-encriptar" type="button" value="Encriptar">
+                <input class="btn-descifrar" type="button" value="Descifrar">
             </div>
-
+        </section>
+        <section class="section2">
+            <div class="contenedorimgmuneco">
+                <img src="Imagenes/Muñeco.png" alt="imagen Muñeco">
+            </div>
+            <div class="contenedor-parrafo">
+                <h3>Ningún mensaje fue <br>encontrado</h3>
+                <p>Ingresa el texto que desees encriptar o <br>desencriptar.</p>
+                <div class="contenedor-copiar">
+                    <input id="btn-copiar" class="btn-copiar" value="Copiar">
+                </div>
+                <div class="contenedor-resultados">
+                    <p class="texto-resultados"></p>
+                </div>
             </div>
         </section>
     </main>
