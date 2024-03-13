@@ -1,90 +1,198 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: "Inter", sans-serif;
 }
-body{
-    batgraun-color: #f4f4f4;
+
+body {
+    background-color: #f4f4f4;
 }
 
-header{
+header {
     width: 100%;
     height: 70px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
 }
 
-.logo{
-    width: 10%;
+.logo {
+    width: 100px;
     height: 50px;
     padding-top: 20px;
     padding-left: 40px;
-
 }
-    
 
-main{
-    width: 100%;
-    height: 90%;
+main {
+    width: 90%;
+    min-height: 100vh;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 300px;
 }
-.contenedor-cajatexto{
-    position: absolute;
+
+.contenedor-cajatexto {
     left: 200px;
+    width: 608px;
+    margin: 100px auto;
     top: 100px;
     padding-left: 100px;
-    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cajatexto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
     height: 600px;
-}
-.cajatexto{
-    width: 80%;
-    width: 100%;
-    border: none;
-    background-color: #f4f4f4;
+    padding: 20px;
+    border: 0px solid #ccc;
     cursor: pointer;
-    color: blue;
+    color: #0A3871;
+    border-radius: 5px;
     font-size: 32px;
-    font-weight:400 ;
-    font-family: "Inter", sans-serif;
+    margin-right: 10%
 }
-.cajatexto::placeholder{
-    color: blue;
+
+.cajatexto::placeholder {
+    color: #0A3871;
 }
-.alerta{
+
+.alerta {
     position: absolute;
-    top: 750px;
-    left: 370px;
+    top: 850px;
+    left: 100px;
     display: flex;
     color: #495057;
+    
 }
-.contenedor-botones{
-    position: absolute;
-    top: 800px;
-    height: 80px;
-    padding-left: 15px;
-    padding-top: 15px;
+
+.alerta img {
+    margin-right: 10px; 
 }
-.btn-encriptar{
+
+
+
+.alerta p {
+    margin-bottom: 20px; 
+
+}
+.contenedor-botones {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-encriptar,
+.btn-descifrar {
+    width: 250px;
+    height: 67px;
+    border-radius: 24px;
+    background-color: #0A3871;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 10px; 
+    padding: 16px 24px; 
+    
+}
+
+.btn-descifrar {
+    background-color: #d8dfe8;
+    color: #0A3871;
+    border: 1px solid #0A3871;
+}
+
+.section2 {
+    width: 50%;
+    max-width: 500px;
+    margin-top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 32px;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.50);
+}
+
+.contenedorimgmuneco {
+    left: 30px;
+    top: 180px;
+    box-sizing: border-box;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.contenedor-parrafo {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contenedor-parrafo h3{
+    font-size: 24px;
+    font-weight: 700px;
+    text-align: center;
+    margin-top: 20px;
+    color: #343A40;
+}
+
+.contenedor-resultados {
+    margin-top: 20px;
+    text-align: center;
+    color: #343A40;
+}
+
+.contenedor-copiar {
+    text-align: center;
+    margin-top: 20px;
+}
+.btn-copiar {
     width: 328px;
     height: 67px;
     border-radius: 24px;
     background-color: #0A3871;
     color: #ffffff;
     font-size: 16px;
-    font-weight: 400px;
+    font-weight: bold;
     font-family: "Inter", sans-serif;
     border: none;
-    margin-right: 20px;
     cursor: pointer;
+    text-align: center;
 }
-.btn-descifrar{
-    width: 328px;
-    height: 67px;
-    border-radius: 24px;
-    background-color: #d8dfe8;
-    color: #0A3871;
-    font-size: 16px;
-    font-weight: 400px;
-    font-family: "Inter", sans-serif;
-    border: 1px solid #0A3871;
-    cursor: pointer; 
+/* Estilos para pantallas más pequeñas, como teléfonos móviles */
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column; /* Cambia la dirección del flujo a columna */
+        align-items: center; /* Centra los elementos en el eje transversal */
+    }
+
+    .contenedor-cajatexto,
+    .section2 {
+        width: 90%; /* Ancho del 90% para adaptarse a pantallas más pequeñas */
+        margin: 20px auto; /* Ajusta el margen para centrar los contenedores */
+        padding: 10px; /* Añade un poco de espacio alrededor del contenido */
+    }
+
+    .cajatexto {
+        height: 200px; /* Reduce la altura del cuadro de texto */
+        font-size: 16px; /* Redimensiona la fuente para pantallas más pequeñas */
+    }
+
+    .btn-encriptar,
+    .btn-descifrar,
+    .btn-copiar {
+        width: 100%; /* Ancho del 100% para ocupar todo el espacio disponible */
+        margin: 10px 0; /* Añade espacio entre los botones */
+    }
+
+    .contenedorimgmuneco img {
+        max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
+        height: auto; /* Hace que la imagen sea proporcional al ancho de su contenedor */
+    }
 }
