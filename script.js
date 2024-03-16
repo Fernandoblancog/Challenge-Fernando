@@ -1,97 +1,59 @@
-var botonEncriptar = document.querySelector(".btn-encriptar");
-var botonDesencriptar = document.querySelector(".btn-desencriptar");
-var munieco = document.querySelector(".contenedormunieco");
-var contenedor = document.querySelector(".contenedor-parrafo");
-var resultado = document.querySelector(".texto-resultado");
+const botonEncriptar = document.querySelector(".btn-encriptar");
+const botonDesencriptar = document.querySelector(".btn-desencriptar");
+const munieco = document.querySelector(".contenedormunieco");
+const contenedor = document.querySelector(".contenedor-parrafo");
+const resultado = document.querySelector(".texto-resultado");
 
 botonEncriptar.onclick = encriptar;
 botonDesencriptar.onclick = desencriptar;
 
-function encriptar(){
+function encriptar() {
     ocultarAdelante();
-    var cajatexto = recuperarTexto()
+    const cajatexto = recuperarTexto();
     resultado.textContent = encriptarTexto(cajatexto);
 }
 
-function desencriptar(){
+function desencriptar() {
     ocultarAdelante();
-    var cajatexto = recuperarTexto()
+    const cajatexto = recuperarTexto();
     resultado.textContent = desencriptarTexto(cajatexto);
 }
 
-function recuperarTexto(){
-    var cajatexto = document.querySelector(".cajatexto")
-    return cajatexto.value
+function recuperarTexto() {
+    const cajatexto = document.querySelector(".cajatexto");
+    return cajatexto.value;
 }
 
-function ocultarAdelante(){
+function ocultarAdelante() {
     munieco.classList.add("ocultar");
     contenedor.classList.add("ocultar");
 }
 
-function encriptarTexto(mensaje){
-    var texto = mensaje;
-    var textoFinal = "";
+function encriptarTexto(mensaje) {
+    let textoFinal = "";
 
-    for(var i = 0; i < texto.length; i++){
-        if(texto[i] == "a"){
-            textoFinal = textoFinal + "ai"
-        }
-        else if(texto[i] == "e"){
-            textoFinal = textoFinal + "enter"
-        }
-        else if(texto[i] == "i"){
-            textoFinal = textoFinal + "imes"
-        }
-        else if(texto[i] == "o"){
-            textoFinal = textoFinal + "ober"
-        }
-        else if(texto[i] == "u"){
-            textoFinal = textoFinal + "ufat"
-        }
-        else{
-            textoFinal = textoFinal + texto[i]
+    for (let letra of mensaje) {
+        switch (letra) {
+            case 'a': textoFinal += `ada`; break;
+            case 'e': textoFinal += `ese`; break;
+            case 'i': textoFinal += `idi`; break;
+            case 'o': textoFinal += `odo`; break;
+            case 'u': textoFinal += `udu`; break;
+            default: textoFinal += letra;
         }
     }
     return textoFinal;
-
 }
 
-function desencriptarTexto(mensaje){
-    var texto = mensaje;
-    var textoFinal = "";
-
-    for(var i = 0; i < texto.length; i++){
-        if(texto[i] == "a"){
-            textoFinal = textoFinal + "a"
-            i = i+1;
-        }
-        else if(texto[i] == "e"){
-            textoFinal = textoFinal + "e"
-            i = i+4;
-        }
-        else if(texto[i] == "i"){
-            textoFinal = textoFinal + "i"
-            i = i+3;
-        }
-        else if(texto[i] == "o"){
-            textoFinal = textoFinal + "o"
-            i = i+3;
-        }
-        
-        else if(texto[i] == "u"){
-            textoFinal = textoFinal + "u"
-            i = i+3;
-        }
-        else{
-            textoFinal = textoFinal + texto[i];
-        }
-        
-    }
-
-    return textoFinal;
-
+function desencriptarTexto(mensaje) {
+    return mensaje.replace(/ada/g, 'a')
+    .replace(/ese/g, 'e')
+    .replace(/idi/g, 'i')
+    .replace(/odo/g, 'o')
+    .replace(/udu/g, 'u');
 }
+
+
 
 const btnCopiar = document.querySelector(".btn-copiar"); 
     btnCopiar.addEventListener("click", copiar = () => {
